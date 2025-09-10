@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Uvarov | Computer Engineering Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        darkgray: '#1E1E1E',
+                        accent: '#3B82F6',
+                        lightgray: '#E5E7EB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .skill-link {
+            transition: color 0.2s ease;
+        }
+        .skill-link:hover {
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-dark text-lightgray font-sans">
+    <header class="fixed top-0 left-0 right-0 bg-darkgray/90 backdrop-blur-sm z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">Max Uvarov</a>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                    </ul>
+                </nav>
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section id="about" class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Project Title: AI-Powered Recommendation Engine</h1>
+            <p class="text-lg md:text-xl text-lightgray max-w-3xl mx-auto mb-8">
+                This project is a machine learning-based recommendation system designed to provide personalized content suggestions for an e-commerce platform. It leverages collaborative filtering and content-based filtering techniques to enhance user engagement and drive sales.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-accent text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">View Live Demo</a>
+                <a href="#" class="bg-darkgray text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">View on GitHub</a>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-darkgray py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-4">The Challenge</h2>
+                        <p class="text-lg mb-6">
+                            The primary challenge was to build a scalable and efficient system that could process a large dataset of user interactions and product attributes in real-time. The goal was to move beyond simple "most popular" lists and deliver genuinely personal recommendations that adapt to a user's changing tastes.
+                        </p>
+                        <img src="https://placehold.co/800x450/1E1E1E/E5E7EB?text=System+Architecture+Diagram" alt="System Architecture Diagram" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-4">Our Solution</h2>
+                        <p class="text-lg mb-6">
+                            We developed a hybrid model combining two machine learning techniques. A collaborative filtering model (using matrix factorization) identifies users with similar tastes, while a content-based model analyzes product features to recommend similar items. This combination ensures relevant suggestions even for new users or niche products with limited interaction data. The backend was built with Python, using libraries like Scikit-learn and Pandas, and served via a REST API.
+                        </p>
+                        <img src="https://placehold.co/800x450/1E1E1E/E5E7EB?text=Screenshot+of+UI" alt="UI Screenshot" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Results & Takeaways</h2>
+                        <p class="text-lg">
+                            After deployment, the platform saw a 15% increase in user click-through rates on recommended products and a 5% uplift in average order value. A key takeaway was the importance of feature engineering in the content-based model; carefully selecting and weighting product attributes had a significant impact on recommendation quality. This project was a fantastic deep-dive into applied machine learning and system design.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        </main>
+
+    <footer class="bg-darkgray py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0"></p>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

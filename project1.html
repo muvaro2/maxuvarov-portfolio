@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Uvarov | Computer Engineering Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        darkgray: '#1E1E1E',
+                        accent: '#3B82F6',
+                        lightgray: '#E5E7EB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .skill-link {
+            transition: color 0.2s ease;
+        }
+        .skill-link:hover {
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-dark text-lightgray font-sans">
+    <header class="fixed top-0 left-0 right-0 bg-darkgray/90 backdrop-blur-sm z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white">Max Uvarov</a>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                    </ul>
+                </nav>
+                <button class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section id="about" class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">FormFit</h1>
+            <p class="text-lg md:text-xl text-lightgray max-w-3xl mx-auto mb-8">
+                A quantitative exercise feedback system. With FormFit, my team and I have successfully created a device and mobile app that records accelerometer and gyroscope data via Arduino, sends it via Bluetooth to our custom Flutter mobile app, and accurately scores and gives specific feedback to users.
+                <br><br>
+                I'm currently the project lead for FormFit for 2025-2026, with big plans to improve our design before Engineering Open House 2026
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://github.com/muvaro2/FormFit" class="bg-accent text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">View on GitHub</a>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-darkgray py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-4">Conception</h2>
+                        <p class="text-lg mb-6">
+                            The idea for FormFit originated as a general sports solution, but seeing the applications in personal training and physical therapy, our group pivoted to exercise. We were successful in our goal of having a working, calibrated device and app prototypes before Engineering Open House 2025 in early April.
+                            <br><br>
+                            Below is the inside of the FormFit device, and me presenting it at EOH:
+                        </p>
+                        <img src="attachments/formfitinside.jpg" alt="" class="rounded-lg shadow-lg w-full">
+                        <p class="text-lg mb-6"><br><br></p>
+                        <img src="attachments/eoh.jpg" alt="" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-4">Arduino and Data Transfer</h2>
+                        <p class="text-lg mb-6">
+                             It was my job to figure out how to get data from our accelerometer and gyroscope to the user. After briefly considering a display on the device itself, I decided the best way would be to use a microcontroller and a mobile app connected via Bluetooth. I chose the Arduino Uno R4 as it has built-in Bluetooth capability, and Flutter as the mobile app framework due to its cross-platform compatibility and Bluetooth libraries.
+                            <br><br>
+                            In the end the data flow went Sensors -> Arduino -> Bluetooth -> Flutter app (via Bluetooth library) -> end user. The code used for the Arduino can be found on my GitHub at muvaro2/FormFitArduinoCode.
+                            <br><br>
+                            Below is a peek at the Flutter homepage:
+                        </p>
+                        <img src="attachments/flutterhomepage.png">
+                    </div>
+
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-4">Calibrating the Device</h2>
+                        <p class="text-lg mb-6">
+                            Calibrating FormFit turned out to be a harder endeavor than I thought. Calibration data was collected through a barebones version of the final flutter app (on GitHub) that allowed me to export a given part of calibration data as CSV. The calibration data was collected from myself and various experienced lifters whom we asked to use their best form on a given exercise with the device active. Due to time constrains, we only fully calibrated a bicep curl, but the methods used could generalize to most exercises.
+                            <br><br>
+                            To return an actual score and feedback, the calibration data was averaged into a long array with the average value of each of the 6 axes (acceleration(x,y,z) and gyroscopic acceleration(x,y,z)). The exercise done by the user was trimmed to the start/stop of motion, stretched/shrunk to the same length as the calibration, and the sum of squared errors was mapped from 0-100% for a final score.
+                            <br><br>
+                            If the score fell below 80%, the app would give the best feedback on how to improve. This was done by making several calibrations of 6 common mistakes (swinging the weight, overrotating the wrist, etc.), and based on which mistake the users data mapped closest to, it would give the appropriate feedback.
+                            <br><br>
+                            Below are the graphs of the main calibration (normalized to 40 samples):
+                        </p>
+                        <img src="attachments/calibrationgraphs.png" alt="UI Screenshot" class="rounded-lg shadow-lg w-full">
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Results & Takeaways</h2>
+                        <p class="text-lg">
+                            Overall, the project was successful, however not without a high number of shortcomings:<br><br>
+                            - Device was too bulky, the Arduino limited how small we could shrink it.<br>
+                            - Device was not rechargeable nor was easy to set up.<br>
+                            - The calibration algorithm was not up to the standard for those with very different arm lengths/sizes and techniques.<br>
+                            <br>
+                            In the next year, I plan to solve the first two changes by abandoning the goal of creating new hardware, and instead sideloading our code onto existing hardware (FitBits, Apple Watches, etc.). This would make the device more commercially viable and accessible, and allows us to take full advantage of the innovation that wearable device manufacturers have already done.<br>
+                            Next, to solve issues with the calibration, I plan to use PyTorch to train a ML model to detect good/bad form. At the cost of more training data, this would vastly improve feedback accuracy.<br><br>
+
+                            Stay posted for future updates. If you have any questions or would like clarification, feel free to email me at muvaro2@illinois.edu
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        </main>
+
+    <footer class="bg-darkgray py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0"></p>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
