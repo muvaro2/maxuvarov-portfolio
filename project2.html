@@ -43,7 +43,7 @@
     <header class="fixed top-0 left-0 right-0 bg-darkgray/90 backdrop-blur-sm z-50 shadow-md">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white">Max Uvarov</a>
+                <a href="index.html" class="text-2xl font-bold text-white">Max Uvarov</a>
                 <nav class="hidden md:block">
                     <ul class="flex space-x-8">
                     </ul>
@@ -59,14 +59,14 @@
         <section id="about" class="container mx-auto px-6 py-20 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Multimodality Imaging Research Laboratory</h1>
             <p class="text-lg md:text-xl text-lightgray max-w-3xl mx-auto mb-8">
-                This page will showcase my work as an undergraduate research assistant at the Multimodality Imaging Research Laboratory since I started in May 2025.<br>
-                I'm currently working on printed circuit boards for a small thermoacoustic sensor and FFT deconvolution algorithms for thermoacoustic image reconstruction.
-                <br><br>
-                The lab website can be found here:  <a href="https://yschenlab.web.illinois.edu/"><u>https://yschenlab.web.illinois.edu/</u></a> 
+                This page showcases my work as an undergraduate research assistant at the Multimodality Imaging Research Laboratory since I started in May 2025.<br>
+                I'm currently working on printed circuit boards and FFT deconvolution algorithms.
+                
             </p>
             <div class="flex justify-center space-x-4">
-                <!--Buttons that link to other pages
-                <a href="#" class="bg-accent text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">View Live Demo</a>
+                
+                <a href="https://yschenlab.web.illinois.edu/" class="bg-accent text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">Lab Website</a>
+                <!--Extra button
                 <a href="#" class="bg-darkgray text-white px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">View on GitHub</a>
                 -->
             </div>
@@ -79,27 +79,37 @@
                     <div class="mb-16">
                         <h2 class="text-3xl font-bold text-white mb-4">Faraday Cage</h2>
                         <p class="text-lg mb-6">
-                            My first project was to build a Faraday cage to be used for imaging experiments by the whole lab. This involved researching RF wave permeability, Faraday cage materials, designing the cage in Onshape, ordering the materials, and assembling the cage itself.<br><br>
+                            My first project was to build a Faraday cage to be used for imaging experiments by the whole lab. This involved researching RF wave permeability, Faraday cage materials, designing the cage in Onshape, ordering/3-D printing the materials, and assembling the cage itself.<br><br>
 
                             Below is an image of the 3-D model (w/o mesh) and the final cage:
                         </p>
-                        <img src="attachments/faradaycagemodel.png" alt="System Architecture Diagram" class="rounded-lg shadow-lg w-full">
+                        <img src="attachments/faradaycagemodel.png" alt="" class="rounded-lg shadow-lg w-full">
                         <p><br><br></p>
-                        <img src="attachments/faradaycage.jpg" alt="System Architecture Diagram" class="rounded-lg shadow-lg w-full">
+                        <img src="attachments/faradaycage.jpg" alt="" class="rounded-lg shadow-lg w-full">
                     </div>
 
                     <div class="mb-16">
-                        <h2 class="text-3xl font-bold text-white mb-4">Our Solution</h2>
+                        <h2 class="text-3xl font-bold text-white mb-4">Thermoacoustic Imaging System</h2>
                         <p class="text-lg mb-6">
-                            We developed a hybrid model combining two machine learning techniques. A collaborative filtering model (using matrix factorization) identifies users with similar tastes, while a content-based model analyzes product features to recommend similar items. This combination ensures relevant suggestions even for new users or niche products with limited interaction data. The backend was built with Python, using libraries like Scikit-learn and Pandas, and served via a REST API.
+                            The next project I worked on was to model (and partially design) a complete thermoacoustic imaging system for a rat. To image the rat, we needed to suspend it in water, rotate it, and move it up and down. Thus, the parts I had to work with are a linear stage, rotation stage, platform (for the stages), water tank, and the emitter/transducer.
+                            <br><br>
+                            Below is an Onshape drawing of the system:
                         </p>
-                        <img src="https://placehold.co/800x450/1E1E1E/E5E7EB?text=Screenshot+of+UI" alt="UI Screenshot" class="rounded-lg shadow-lg w-full">
+                        <img src="attachments/setup.png" alt="" class="rounded-lg shadow-lg w-full">
+                        <p class="text-lg mb-6">
+                            <br><br><br>
+                            Below is a Solidworks of the most recent water tank drawing, including gaps for the transducer and emitter (to be filled in with parafilm) and holes for water circulation (to keep temperature consistent):
+                            <br>
+                        </p>
+                        <img src="attachments/watertank.png" alt="" class="rounded-lg shadow-lg w-full">
                     </div>
-
+                    
                     <div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Results & Takeaways</h2>
+                        <h2 class="text-3xl font-bold text-white mb-4">Next Steps</h2>
                         <p class="text-lg">
-                            After deployment, the platform saw a 15% increase in user click-through rates on recommended products and a 5% uplift in average order value. A key takeaway was the importance of feature engineering in the content-based model; carefully selecting and weighting product attributes had a significant impact on recommendation quality. This project was a fantastic deep-dive into applied machine learning and system design.
+                            Next, I plan to work with printed circuit boards for a small thermoacoustic sensor and FFT deconvolution algorithms for thermoacoustic image reconstruction; major updates will be appended to this page.<br><br>
+
+                            Feel free to reach out to me at muvaro2@illinois.edu
                         </p>
                     </div>
 
